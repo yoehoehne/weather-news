@@ -66,11 +66,11 @@ angular.module('weatherNews', ['ui.router'])
             postFactory.getAll()
             $scope.posts = postFactory.posts;
             $scope.addPost = function(){
-                if($scope.title === '') { return; }
+                if($scope.message === '') { return; }
                 postFactory.create({
-                    title: $scope.title
+                    title: $scope.message
                 });
-                $scope.title = '';
+                $scope.message = '';
             };
             $scope.incrementUpvotes = function (post) {
                 postFactory.upvote(post);
